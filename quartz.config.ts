@@ -94,4 +94,7 @@ const config: QuartzConfig = {
   },
 }
 
+import "./styles/custom.scss"
+
+
 export default config
