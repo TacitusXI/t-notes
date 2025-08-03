@@ -1,3 +1,265 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Custom cyber/tech theme matching portfolio notes section
+:root {
+    // Main colors from portfolio notes
+    --light: #090a1a;
+    --lightgray: rgba(0, 0, 0, 0.3);
+    --gray: rgba(255, 255, 255, 0.5);
+    --darkgray: rgba(255, 255, 255, 0.9);
+    --dark: rgba(255, 255, 255, 1);
+    --secondary: rgb(0, 224, 255);
+    --tertiary: rgb(0, 255, 163);
+    --highlight: rgba(0, 224, 255, 0.1);
+    --textHighlight: rgba(0, 224, 255, 0.3);
+    
+    // Custom cyber accents
+    --cyber-blue: rgb(0, 224, 255);
+    --cyber-green: rgb(0, 255, 163);
+    --cyber-purple: rgb(115, 74, 253);
+    --cyber-blue-alt: rgb(49, 164, 253);
+}
+
+body {
+    background: #090a1a;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Courier New', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+    
+    // Add tech grid background
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            linear-gradient(rgba(0, 224, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 224, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+        z-index: -1;
+    }
+}
+
+// Enhanced headings with cyber styling
+h1, h2, h3, h4, h5, h6 {
+    color: var(--cyber-blue-alt);
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid rgba(115, 74, 253, 0.3);
+    padding-bottom: 0.5rem;
+    
+    &::before {
+        content: ">> ";
+        color: var(--cyber-blue);
+        font-family: 'Courier New', monospace;
+    }
+}
+
+h2 {
+    font-size: 1.4rem;
+    
+    &::before {
+        content: "# ";
+        color: var(--cyber-green);
+        font-family: 'Courier New', monospace;
+    }
+}
+
+h3 {
+    font-size: 1.2rem;
+    
+    &::before {
+        content: "$ ";
+        color: var(--cyber-purple);
+        font-family: 'Courier New', monospace;
+    }
+}
+
+// Enhanced links
+a {
+    color: var(--cyber-purple);
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: var(--cyber-blue-alt);
+        text-shadow: 0 0 5px rgba(49, 164, 253, 0.5);
+        text-decoration: none;
+    }
+}
+
+// Enhanced blockquotes
+blockquote {
+    border-left: 3px solid rgba(115, 74, 253, 0.5);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    background: rgba(115, 74, 253, 0.05);
+    border-radius: 0 8px 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    position: relative;
+    
+    &::before {
+        content: "💭 ";
+        position: absolute;
+        left: -0.5rem;
+        top: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+// Enhanced code styling
+code {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: var(--cyber-blue-alt);
+    border: 1px solid rgba(0, 224, 255, 0.2);
+}
+
+pre {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid rgba(115, 74, 253, 0.3);
+    position: relative;
+    
+    &::before {
+        content: "⚡ Terminal";
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--cyber-green);
+        font-family: 'Courier New', monospace;
+    }
+    
+    code {
+        background: none;
+        padding: 0;
+        border: none;
+    }
+}
+
+// Enhanced tables
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+    
+    th, td {
+        border: 1px solid rgba(115, 74, 253, 0.3);
+        padding: 0.75rem;
+        text-align: left;
+    }
+    
+    th {
+        background: rgba(115, 74, 253, 0.1);
+        font-weight: 600;
+        color: var(--cyber-blue-alt);
+        border-bottom: 2px solid var(--cyber-blue);
+    }
+    
+    tr:hover {
+        background: rgba(0, 224, 255, 0.05);
+    }
+}
+
+// Enhanced navigation and UI elements
+.page-title, .section-title {
+    color: var(--cyber-blue-alt);
+    text-shadow: 0 0 10px rgba(49, 164, 253, 0.3);
+}
+
+// Floating particles effect for certain elements
+.floating-accent {
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-green));
+        border-radius: 50%;
+        animation: float 3s ease-in-out infinite;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) opacity(0.3); }
+    50% { transform: translateY(-10px) opacity(0.8); }
+}
+
+// Search and filter elements
+input[type="search"], .search-container {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 224, 255, 0.3);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    
+    &:focus {
+        border-color: var(--cyber-blue);
+        box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+        outline: none;
+    }
+}
+
+// Enhanced list styling
+ul, ol {
+    li {
+        margin: 0.5rem 0;
+        position: relative;
+        
+        &::marker {
+            color: var(--cyber-green);
+        }
+    }
+}
+
+ul li::before {
+    content: "▸ ";
+    color: var(--cyber-blue);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+// Add some glow effects to important elements
+.highlight, .important {
+    text-shadow: 0 0 5px var(--cyber-blue);
+    color: var(--cyber-blue-alt);
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-green));
+    border-radius: 4px;
+    
+    &:hover {
+        background: linear-gradient(135deg, var(--cyber-green), var(--cyber-blue));
+    }
+}

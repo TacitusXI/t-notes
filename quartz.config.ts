@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "Tacitvs Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "TacitusXI.github.io/t-notes",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -29,26 +29,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#090a1a",
+          lightgray: "rgba(0, 0, 0, 0.3)",
+          gray: "rgba(255, 255, 255, 0.5)",
+          darkgray: "rgba(255, 255, 255, 0.9)",
+          dark: "rgba(255, 255, 255, 1)",
+          secondary: "rgb(0, 224, 255)",
+          tertiary: "rgb(0, 255, 163)",
+          highlight: "rgba(0, 224, 255, 0.1)",
+          textHighlight: "rgba(0, 224, 255, 0.3)",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#090a1a",
+          lightgray: "rgba(0, 0, 0, 0.3)",
+          gray: "rgba(255, 255, 255, 0.5)",
+          darkgray: "rgba(255, 255, 255, 0.9)",
+          dark: "rgba(255, 255, 255, 1)",
+          secondary: "rgb(0, 224, 255)",
+          tertiary: "rgb(0, 255, 163)",
+          highlight: "rgba(0, 224, 255, 0.1)",
+          textHighlight: "rgba(0, 224, 255, 0.3)",
         },
       },
     },
@@ -93,8 +93,5 @@ const config: QuartzConfig = {
     ],
   },
 }
-
-import "./styles/custom.scss"
-
 
 export default config

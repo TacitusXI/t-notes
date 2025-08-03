@@ -8,8 +8,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/TacitusXI/t-notes",
+      Portfolio: "https://tacitusxi.github.io/next-portfolio",
     },
   }),
 }
@@ -34,7 +34,9 @@ export const defaultContentPageLayout: PageLayout = {
           Component: Component.Search(),
           grow: true,
         },
-        { Component: Component.Darkmode() },
+        { Component: Component.Darkmode({ 
+          defaultMode: "dark",
+        }) },
         { Component: Component.ReaderMode() },
       ],
     }),
@@ -59,7 +61,9 @@ export const defaultListPageLayout: PageLayout = {
           Component: Component.Search(),
           grow: true,
         },
-        { Component: Component.Darkmode() },
+        { Component: Component.Darkmode({ 
+          defaultMode: "dark",
+        }) },
       ],
     }),
     Component.Explorer(),
