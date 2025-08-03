@@ -6,6 +6,18 @@
       <description>Last 10 notes on Tacitvs Notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>audit_readiness_checklist</title>
+    <link>https://TacitusXI.github.io/t-notes/Notes/audit_prerequisites/audit_readiness_checklist</link>
+    <guid>https://TacitusXI.github.io/t-notes/Notes/audit_prerequisites/audit_readiness_checklist</guid>
+    <description><![CDATA[ In addition to rekt test this toolkit can be used. ]]></description>
+    <pubDate>Sun, 03 Aug 2025 12:46:04 GMT</pubDate>
+  </item><item>
+    <title>rekt_test</title>
+    <link>https://TacitusXI.github.io/t-notes/Notes/audit_prerequisites/rekt_test</link>
+    <guid>https://TacitusXI.github.io/t-notes/Notes/audit_prerequisites/rekt_test</guid>
+    <description><![CDATA[ It is important to know whether protocol is even prepared for audit or not. Rekt test is valuable tool to identify. ]]></description>
+    <pubDate>Sun, 03 Aug 2025 12:46:04 GMT</pubDate>
+  </item><item>
     <title>evm_tricks</title>
     <link>https://TacitusXI.github.io/t-notes/Notes/evm_tricks</link>
     <guid>https://TacitusXI.github.io/t-notes/Notes/evm_tricks</guid>
