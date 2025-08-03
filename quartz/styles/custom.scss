@@ -220,23 +220,37 @@ input[type="search"], .search-container {
     }
 }
 
-// Enhanced list styling
+// Enhanced list styling - clean and simple
 ul, ol {
     li {
         margin: 0.5rem 0;
         position: relative;
         
+        // Remove all ::before pseudo-elements from list items
+        &::before {
+            display: none !important;
+            content: none !important;
+        }
+        
+        // DISABLE all markers completely
         &::marker {
-            color: var(--cyber-green);
+            display: none !important;
+            content: "" !important;
+            visibility: hidden !important;
         }
     }
 }
 
-ul li::before {
-    content: "▸ ";
-    color: var(--cyber-blue);
-    font-weight: bold;
-    margin-right: 0.5rem;
+// Force remove any arrows or prefixes from list items
+li::before {
+    display: none !important;
+    content: none !important;
+}
+
+// Also remove from any nested lists
+ul li::before, ol li::before {
+    display: none !important;
+    content: none !important;
 }
 
 // Add some glow effects to important elements
@@ -262,4 +276,266 @@ ul li::before {
     &:hover {
         background: linear-gradient(135deg, var(--cyber-green), var(--cyber-blue));
     }
+}
+
+// ABSOLUTE NUCLEAR OPTION: Remove ALL arrows from ALL list items
+ul li::before,
+ol li::before,
+li::before,
+.explorer-ul li::before,
+.folder-outer li::before,
+.folder-container li::before,
+.folder-content li::before,
+.explorer-content li::before,
+.explorer li::before,
+[class*="folder"] li::before,
+[class*="explorer"] li::before,
+[class*="content"] li::before {
+    content: "" !important;
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    opacity: 0 !important;
+}
+
+// Global override - remove ALL pseudo-element arrows (simplified)
+
+// Alternative approach - override the content specifically
+ul li {
+    &::before {
+        content: "" !important;
+        display: none !important;
+    }
+}
+
+// Force remove any arrows - simpler approach
+
+// Override any possible list styling
+li {
+    list-style: disc !important;
+    
+    &::before {
+        content: "" !important;
+        display: none !important;
+    }
+}
+
+ul {
+    list-style-type: disc !important;
+    
+    li::before {
+        content: "" !important;
+        display: none !important;
+    }
+}
+
+ol {
+    list-style-type: decimal !important;
+    
+    li::before {
+        content: "" !important;
+        display: none !important;
+    }
+}
+
+// Add dash ONLY before actual files (not folders or nested folders)
+// Files must end with .html AND not be directories
+.explorer-content a[href$=".html"]:not([href*="/index"]):not([href*="/tag"]):not([href*="/folder"]):not([href$="/"]) {
+    &::before {
+        content: "- ";
+        color: var(--cyber-blue);
+        font-weight: normal;
+        margin-right: 0.3rem;
+        font-size: 0.85rem;
+    }
+}
+
+// ABSOLUTELY NO prefixes for folders, nested folders, or directories
+// This includes audit_prerequisites and any other folder
+.explorer-content a:not([href$=".html"]),
+.explorer-content a[href$="/"],
+.explorer-content a[data-folderpath],
+.explorer-content a[href*="/index"],
+.folder-outer a,
+.folder-container a,
+.folder-content a:not([href$=".html"]),
+.explorer li > a:not([href$=".html"]) {
+    &::before {
+        content: "" !important;
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+// Extra safety: remove ANY arrow from folder-like elements
+li > a:not([href$=".html"])::before {
+    content: "" !important;
+    display: none !important;
+}
+
+// BRUTAL FORCE: Override any possible arrow styling
+// Target the exact issue - green arrows on folders
+.explorer-content li::before,
+.explorer li::before,
+.folder-outer li::before,
+.folder-container li::before {
+    content: "" !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+}
+
+// Override any possible content property with arrows (simplified)
+
+// Last resort: inline style override (simplified)
+
+/* COMPLETE RESET: Start fresh with list styling */
+.explorer-content,
+.explorer-content ul,
+.explorer-content ol,
+.explorer-content li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+    list-style-position: outside !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove ALL pseudo-elements from list items */
+.explorer-content li::before,
+.explorer-content li::after,
+.explorer-content ul li::before,
+.explorer-content ul li::after {
+    display: none !important;
+    content: "" !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* DISABLE markers specifically in explorer */
+.explorer-content li::marker,
+.explorer-content ul li::marker,
+.explorer li::marker {
+    display: none !important;
+    content: "" !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Remove underlines from file links in explorer */
+.explorer-content li:not(:has(.folder-container)) a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* SPECIFIC TARGETING: Only files (not folders) get dashes */
+/* Files have direct <a> tags, folders have .folder-container */
+.explorer-content li:not(:has(.folder-container)) a {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 180px !important;
+    position: relative !important;
+}
+
+/* Add hover tooltip for truncated filenames */
+.explorer-content li:not(:has(.folder-container)) a[title]::after {
+    content: attr(title) !important;
+    position: absolute !important;
+    background: var(--dark) !important;
+    color: var(--light) !important;
+    padding: 0.5rem !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    z-index: 1000 !important;
+    bottom: 100% !important;
+    left: 0 !important;
+    margin-bottom: 0.5rem !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.2s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.explorer-content li:not(:has(.folder-container)) a[title]:hover::after {
+    opacity: 1 !important;
+}
+
+.explorer-content li:not(:has(.folder-container)) a::before {
+    content: "- " !important;
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: rgb(0, 224, 255) !important;
+    font-weight: normal !important;
+    margin-right: 0.3rem !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+}
+
+/* ENSURE folders (with .folder-container) get NO prefix */
+.explorer-content li:has(.folder-container)::before,
+.explorer-content li:has(.folder-container)::marker {
+    display: none !important;
+    content: "" !important;
+    visibility: hidden !important;
+}
+
+/* Override default explorer indentation for better nesting visibility */
+.explorer .folder-outer > ul {
+    padding-left: 1.5rem !important;
+    margin-left: 8px !important;
+    border-left: none !important;
+    border: none !important;
+}
+
+/* Increase indentation for deeply nested folders */
+.explorer .folder-outer .folder-outer > ul {
+    padding-left: 2rem !important;
+    margin-left: 12px !important;
+    border-left: none !important;
+    border: none !important;
+}
+
+.explorer .folder-outer .folder-outer .folder-outer > ul {
+    padding-left: 2.5rem !important;
+    margin-left: 16px !important;
+    border-left: none !important;
+    border: none !important;
+}
+
+/* Remove all borders from nested explorer content */
+.explorer-content ul,
+.explorer-content li,
+.folder-outer ul,
+.folder-outer li {
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
 }

@@ -87,6 +87,11 @@ function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElemen
   a.href = resolveRelative(currentSlug, node.slug)
   a.dataset.for = node.slug
   a.textContent = node.displayName
+  
+  // Add title attribute for tooltip on long filenames
+  if (node.displayName.length > 20) {
+    a.title = node.displayName
+  }
 
   if (currentSlug === node.slug) {
     a.classList.add("active")

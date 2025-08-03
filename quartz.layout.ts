@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/TacitusXI/t-notes",
-      Portfolio: "https://tacitusxi.github.io/next-portfolio",
+      "Digital Hub": "https://tacitvs.eth.limo/",
     },
   }),
 }
