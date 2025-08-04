@@ -1,4 +1,4 @@
-### [S-#] Storing the password on-chain makes it visible to anyone, and no longer private
+### [H-1] Storing the password on-chain makes it visible to anyone, and no longer private
 
   
 
@@ -91,10 +91,18 @@ myPassword
 
   
   
-  
+
+## Likelihood & Impact:
+
+- Impact: High
+
+- Likelihood: HIGH
+
+- Severity: HIGH
+
   
 
-### [S-#] `PasswordStore::setpassword` has no access control, meaning a non-owner could change the password
+### [H-2] `PasswordStore::setpassword` has no access control, meaning a non-owner could change the password
 
   
 
@@ -178,9 +186,19 @@ revert PasswordStore__NotOwner();
 ```
 
   
+
+## Likelihood & Impact:
+
+- Impact: High
+
+- Likelihood: HIGH
+
+- Severity: HIGH
+
+  
   
 
-### [S-#] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist, causing the natspec to be incorrect.
+### [I-1] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist, causing the natspec to be incorrect.
 
   
 
@@ -222,3 +240,17 @@ The `PasswordStore::getPassword` function signature is `getPassword()` which the
 - * @param newPassword The new password to set.
 
 ```
+
+  
+
+## Likelihood & Impact:
+
+- Impact: NONE
+
+- Likelihood: HIGH?
+
+- Severity: Informational/Gas/Non-Crits
+
+  
+
+Informational: Hey, this isn't a bug, but you should know...
