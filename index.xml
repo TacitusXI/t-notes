@@ -7,6 +7,18 @@
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>findings</title>
+    <link>https://TacitusXI.github.io/t-notes/Audits/findings</link>
+    <guid>https://TacitusXI.github.io/t-notes/Audits/findings</guid>
+    <description><![CDATA[ [S-#] Storing the password on-chain makes it visible to anyone, and no longer private Description: All data stored on-chain is visible to anyone, and can be read directly from the blockchain. ]]></description>
+    <pubDate>Mon, 04 Aug 2025 11:29:12 GMT</pubDate>
+  </item><item>
+    <title>PasswordStore</title>
+    <link>https://TacitusXI.github.io/t-notes/Audits/PasswordStore</link>
+    <guid>https://TacitusXI.github.io/t-notes/Audits/PasswordStore</guid>
+    <description><![CDATA[ // SPDX-License-Identifier: MIT pragma solidity 0.8.18; /* * @author not-so-secure-dev * @title PasswordStore * @notice This contract allows you to store a private password that others won&#039;t be able to see. ]]></description>
+    <pubDate>Mon, 04 Aug 2025 11:28:53 GMT</pubDate>
+  </item><item>
+    <title>findings</title>
     <link>https://TacitusXI.github.io/t-notes/Templates/findings</link>
     <guid>https://TacitusXI.github.io/t-notes/Templates/findings</guid>
     <description><![CDATA[ [S-#] TITLE (Root Cause + Impact) Description: Impact: Proof of Concept: Recommended Mitigation:. ]]></description>

@@ -1,4 +1,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://TacitusXI.github.io/t-notes/Audits/PasswordStore</loc>
+    <lastmod>2025-08-04T11:28:53.829Z</lastmod>
+  </url><url>
+    <loc>https://TacitusXI.github.io/t-notes/Audits/findings</loc>
+    <lastmod>2025-08-04T11:29:12.641Z</lastmod>
+  </url><url>
     <loc>https://TacitusXI.github.io/t-notes/CTFs/01_ethernaut/ethernaut_01_fallback</loc>
     <lastmod>2025-07-30T21:16:19.000Z</lastmod>
   </url><url>
