@@ -1,26 +1,29 @@
-everything you need to find DOS
+# Everything You Need to Find DOS Vulnerabilities
 
-Transactopm that being prevented going through
-It can be caused by:
-1. Unbounded for loop the have more than gas block limit
-2. an external call failing
+A DOS (Denial of Service) attack prevents legitimate transactions from going through.
 
-if you see for loop ask yourself:
-1. is this iterable thing that being iterated is that bound to a certain size 
-2. if not can a user add arbitrary amoung of data to it
-3. how much user cost to do it
-4. can user do it cheaply to make DOS
+## Common Causes
+1. Unbounded for loops that exceed the gas block limit
+2. External calls failing
 
+## For Loop Analysis
+If you see a for loop, ask yourself:
+1. Is the iterable thing being iterated bound to a certain size?
+2. If not, can a user add an arbitrary amount of data to it?
+3. How much does it cost the user to do this?
+4. Can a user do it cheaply to cause DOS?
 
-external call might be anything that transfering ether ot simply doing external call to a third patry contract
+## External Call Analysis
+External calls might be anything that transfers ether or makes calls to third-party contracts.
 
-if you found ask yourself : 
-1. is that a way for this tx to fail
-2. if yes will it cause will it cause globlaaly entire call to revert(function that making that external clal)
-3. how it can affect the system? will it be very dangerous or small effect?
+If you find external calls, ask yourself:
+1. Is there a way for this transaction to fail?
+2. If yes, will it cause the entire call to revert globally (the function making that external call)?
+3. How can it affect the system? Will it be very dangerous or have a small effect?
 
-and you can force external call to fail by:
-1. sending ether to a contract that does not accept it
-2. calling function that does not exist on the contract it is calling
-3. the external call execution runs out of gas
-4. third party contract is simply malicious
+## Ways to Force External Call Failures
+You can force external calls to fail by:
+1. Sending ether to a contract that does not accept it
+2. Calling a function that does not exist on the contract being called
+3. Making the external call execution run out of gas
+4. Using a malicious third-party contract
