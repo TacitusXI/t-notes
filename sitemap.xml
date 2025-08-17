@@ -1,12 +1,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://TacitusXI.github.io/t-notes/Audits/PasswordStore/Findings</loc>
-    <lastmod>2025-08-04T11:32:51.000Z</lastmod>
+    <lastmod>2025-08-04T12:01:24.000Z</lastmod>
   </url><url>
     <loc>https://TacitusXI.github.io/t-notes/Audits/PasswordStore/PasswordStore</loc>
     <lastmod>2025-08-04T11:32:51.000Z</lastmod>
   </url><url>
     <loc>https://TacitusXI.github.io/t-notes/CTFs/01_ethernaut/ethernaut_01_fallback</loc>
     <lastmod>2025-07-30T21:16:19.000Z</lastmod>
+  </url><url>
+    <loc>https://TacitusXI.github.io/t-notes/Notes/DOS/DOS_ALL</loc>
+    <lastmod>2025-08-17T22:04:29.000Z</lastmod>
   </url><url>
     <loc>https://TacitusXI.github.io/t-notes/Notes/audit_prerequisites/audit_readiness_checklist</loc>
     <lastmod>2025-08-03T12:46:04.000Z</lastmod>

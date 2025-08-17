@@ -6,11 +6,17 @@
       <description>Last 10 notes on Tacitvs Notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>DOS_ALL</title>
+    <link>https://TacitusXI.github.io/t-notes/Notes/DOS/DOS_ALL</link>
+    <guid>https://TacitusXI.github.io/t-notes/Notes/DOS/DOS_ALL</guid>
+    <description><![CDATA[ Everything You Need to Find DOS Vulnerabilities A DOS (Denial of Service) attack prevents legitimate transactions from going through. ]]></description>
+    <pubDate>Sun, 17 Aug 2025 22:04:29 GMT</pubDate>
+  </item><item>
     <title>Findings</title>
     <link>https://TacitusXI.github.io/t-notes/Audits/PasswordStore/Findings</link>
     <guid>https://TacitusXI.github.io/t-notes/Audits/PasswordStore/Findings</guid>
     <description><![CDATA[ [H-1] Storing the password on-chain makes it visible to anyone, and no longer private Description: All data stored on-chain is visible to anyone, and can be read directly from the blockchain. ]]></description>
-    <pubDate>Mon, 04 Aug 2025 11:32:51 GMT</pubDate>
+    <pubDate>Mon, 04 Aug 2025 12:01:24 GMT</pubDate>
   </item><item>
     <title>PasswordStore</title>
     <link>https://TacitusXI.github.io/t-notes/Audits/PasswordStore/PasswordStore</link>
@@ -59,12 +65,6 @@
     <guid>https://TacitusXI.github.io/t-notes/</guid>
     <description><![CDATA[ Hello! This is the homepage of my Quartz-powered site. Feel free to add more content here. ]]></description>
     <pubDate>Wed, 30 Jul 2025 21:15:35 GMT</pubDate>
-  </item><item>
-    <title>ctf-template</title>
-    <link>https://TacitusXI.github.io/t-notes/Templates/ctf-template</link>
-    <guid>https://TacitusXI.github.io/t-notes/Templates/ctf-template</guid>
-    <description><![CDATA[ CTF Writeup Template – by Tacitvs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 💥 Title: [Challenge name] “Exploit is art. ]]></description>
-    <pubDate>Sun, 27 Jul 2025 14:12:38 GMT</pubDate>
   </item>
     </channel>
   </rss>
